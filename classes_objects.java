@@ -103,12 +103,16 @@ public class classes_objects {
       co1.setColor("red");
       co1.setWheels(4);
       co1.setMaxSpeed(180);
+      co1.setSeats(2);
 
       co2.setColor("blue");
       co2.setWheels(4);
       co2.setMaxSpeed(200);
       co2.horn();
+      co2.setSeats(4);
       System.out.println(co2.getColor());
+      System.out.println(co1.getSeats());
+    
 
       //an instance of the sum method with a return
       int y = sum(6, 7);

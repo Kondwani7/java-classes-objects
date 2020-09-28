@@ -89,6 +89,9 @@ public class classes_objects {
     System.out.println("DRY");
   }
 
+  //final
+  public static final Double Pi = 3.14;
+
   public static void main(String[] args) {
       //method 1
       newMethod();
@@ -126,5 +129,16 @@ public class classes_objects {
       classes_objects coderK = new classes_objects();
       coderK.coder101();
 
+      //value type
+      int d = 7;
+      multiplyByTwo(d);
+      System.out.println(d);
+      
+      //final instance
+      System.out.println(Pi);
     }
+    // object for the value type
+    static void multiplyByTwo(int num) {
+      num = num * 2;
+    }    
 }

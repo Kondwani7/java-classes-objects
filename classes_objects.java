@@ -1,3 +1,40 @@
+ //nesting 
+ class Student{
+  int id;
+  Student (int i){
+    id = i;
+    Grades a = new Grades();
+    a.passed();
+  }
+
+  private class Grades{
+    public void passed(){
+      System.out.println(id + " passed");
+    }
+  }
+}
+
+
+
+//anonymous classes
+class phoneNumber {
+  public void digits(){
+    System.out.println(10);
+  }
+}
+
+//abstract class
+abstract class Phones{
+  int chargingPort = 1;
+  abstract void ringTone();
+}
+
+class Samsung extends Phones{
+  public void ringTone(){
+    System.out.println("ring ring");
+  }
+}
+
 
 public class classes_objects {
   // car attributes
@@ -5,6 +42,9 @@ public class classes_objects {
   private String color;
   private int maxSpeed;
   private int seats;
+
+ 
+
 
   //Seats constructor
   classes_objects(){
@@ -55,6 +95,7 @@ public class classes_objects {
     this.maxSpeed = ms;
   }
 
+
   // constructor
   public void horn() {
     System.out.println("Meep meep");
@@ -92,10 +133,22 @@ public class classes_objects {
   //final
   public static final Double Pi = 3.14;
 
+  //enums
+  enum position{
+    KEEPER,
+    DEFENDER,
+    MIDFIELDER,
+    STRIKER
+  }
+  
+
   public static void main(String[] args) {
       //method 1
       newMethod();
 
+      //abstract class instance
+      Samsung sp = new Samsung();
+      sp.ringTone();
       //method with a string
       kMethod("Kondwani");
 
@@ -115,6 +168,7 @@ public class classes_objects {
       co2.setSeats(4);
       System.out.println(co2.getColor());
       System.out.println(co1.getSeats());
+      System.out.println(co2.getMaxSpeed());
     
 
       //an instance of the sum method with a return
@@ -136,7 +190,40 @@ public class classes_objects {
       
       //final instance
       System.out.println(Pi);
-    }
+      //casting
+      double ad = (double) 1.29;
+      System.out.println(ad);
+      //instance of an anonymous class
+      phoneNumber pn = new phoneNumber(){
+        @Override public void digits(){
+          System.out.println(7);
+        }
+      };
+      pn.digits();
+
+      //instance of a nested class
+      Student Kondwani = new Student(1234);
+
+      //instance of the enum function with a switch statement
+      position ps = position.STRIKER;
+
+      switch(ps){
+        case KEEPER:
+        System.out.println("The keeper saves");
+        break;
+        case DEFENDER:
+        System.out.println("The defender protects");
+        break;
+        case MIDFIELDER:
+        System.out.println("The midfielder passes");
+        break;
+        case STRIKER:
+        System.out.println("The strikers scores");
+        break;
+      }
+
+    } 
+  
     // object for the value type
     static void multiplyByTwo(int num) {
       num = num * 2;
